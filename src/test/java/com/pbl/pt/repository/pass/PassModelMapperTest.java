@@ -1,6 +1,5 @@
 package com.pbl.pt.repository.pass;
 
-import com.pbl.pt.repository.pass.*;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
@@ -13,11 +12,11 @@ public class PassModelMapperTest {
     public void test_toPassEntity() {
         // given
         final LocalDateTime now = LocalDateTime.now();
-        final String userId = "A1000000";
+        final String userId = "1";
 
         BulkPassEntity bulkPassEntity = new BulkPassEntity();
         bulkPassEntity.setPackageSeq(1);
-        bulkPassEntity.setUserGroupId("GROUP");
+        bulkPassEntity.setBulkPassUserGroupId("1");
         bulkPassEntity.setStatus(BulkPassStatus.COMPLETED);
         bulkPassEntity.setCount(10);
         bulkPassEntity.setStartedAt(now.minusDays(60));
