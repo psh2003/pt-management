@@ -18,11 +18,7 @@ import javax.persistence.Table;
 @IdClass(UserGroupMappingId.class)
 public class UserGroupMappingEntity extends BaseEntity {
     @Id
-    private String bulkPassUserGroupId;
+    private String userGroupId;
     @Id
     private String userId;
-
-    private String userGroupName;
-    private String description;
-
 }

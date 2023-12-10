@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface UserGroupMappingRepository extends JpaRepository<UserGroupMappingEntity, Integer> {
-    List<UserGroupMappingEntity> findByBulkPassUserGroupId(String bulkPassUserGroupId);
+    List<UserGroupMappingEntity> findByUserGroupId(String bulkPassUserGroupId);
 }

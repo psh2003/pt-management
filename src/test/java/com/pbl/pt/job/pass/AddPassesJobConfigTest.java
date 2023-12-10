@@ -70,7 +70,7 @@ public class AddPassesJobConfigTest {
         bulkPassRepository.save(bulkPassEntity);
 
         UserGroupMappingEntity userGroupMappingEntity = new UserGroupMappingEntity();
-        userGroupMappingEntity.setBulkPassUserGroupId(userGroupId);
+        userGroupMappingEntity.setUserGroupId(userGroupId);
         userGroupMappingEntity.setUserId(userId);
         userGroupMappingEntity.setUserGroupName("그룹");
         userGroupMappingEntity.setDescription("그룹 설명");

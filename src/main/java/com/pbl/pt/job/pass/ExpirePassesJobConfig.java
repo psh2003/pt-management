@@ -62,8 +62,8 @@ public class ExpirePassesJobConfig {
         return new JpaCursorItemReaderBuilder<PassEntity>()
                 .name("expirePassesItemReader")
                 .entityManagerFactory(entityManagerFactory)
-                // 상태(status)가 진행중이며, 종료일시(endedAt)이 현재 시점보다 과거일 경우 만료 대상이 됩니다.
-                .queryString("select p from PassEntity p where p.status = :status and p.endedAt <= :endedAt")
+                // 종료일시(endedAt)이 현재 시점보다 과거일 경우 만료 대상이 됩니다.
+                .queryString("select p from PassEntity p where p.endedAt <= :endedAt")
                 .parameterValues(Map.of("status", PassStatus.PROGRESSED, "endedAt", LocalDateTime.now()))
                 .build();
     }

@@ -36,7 +36,7 @@ public class AddPassesTasklet implements Tasklet {
         int count = 0;
         for (BulkPassEntity bulkPassEntity : bulkPassEntities) {
             // user group에 속한 userId들을 조회합니다.
-            final List<String> userIds = userGroupMappingRepository.findByBulkPassUserGroupId(bulkPassEntity.getBulkPassUserGroupId())
+            final List<String> userIds = userGroupMappingRepository.findByUserGroupId(bulkPassEntity.getBulkPassUserGroupId())
                     .stream().map(UserGroupMappingEntity::getUserId).toList();
 
             // 각 userId로 이용권을 추가합니다.

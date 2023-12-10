@@ -63,12 +63,12 @@ public class AddPassesTaskletTest {
         bulkPassEntity.setEndedAt(now.plusDays(60));
 
         final UserGroupMappingEntity userGroupMappingEntity = new UserGroupMappingEntity();
-        userGroupMappingEntity.setBulkPassUserGroupId(userGroupId);
+        userGroupMappingEntity.setUserGroupId(userGroupId);
         userGroupMappingEntity.setUserId(userId);
 
         // when
         when(bulkPassRepository.findByStatusAndStartedAtGreaterThan(eq(BulkPassStatus.READY), any())).thenReturn(List.of(bulkPassEntity));
-        when(userGroupMappingRepository.findByBulkPassUserGroupId(eq("2"))).thenReturn(List.of(userGroupMappingEntity));
+        when(userGroupMappingRepository.findByUserGroupId(eq("2"))).thenReturn(List.of(userGroupMappingEntity));
 
         RepeatStatus repeatStatus = addPassesTasklet.execute(stepContribution, chunkContext);
 
