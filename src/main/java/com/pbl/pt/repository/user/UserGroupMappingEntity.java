@@ -21,8 +21,4 @@ public class UserGroupMappingEntity extends BaseEntity {
     private String userGroupId;
     @Id
     private String userId;
-
-    private String userGroupName;
-    private String description;
-
 }
